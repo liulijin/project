@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+   <!-- 头部 -->
+   <div class="header">
+      <div class="header-cen">
+         <h1><a href="../html/index.html"><img src="../html/images/logo.png" alt=""></a></h1>
+         <div class="midle">为确保您账户的安全及正常使用，依《网络安全法》相关要求，6月1日起会员账户需绑定手机。
+            如您还未绑定，请尽快完成，感谢您的理解及支持！
+         </div>
+         <div class="btn"><a href="../html/register.html">注册</a></div>
+      </div>
+   </div>
+   <!-- 主体内容 -->
+   <div class="contain">
+      <div class="box">
+         <ul>
+            <li class="active">用户登录</li>
+            <li>手机验证码登录</li>
+         </ul>
+         <ol>
+            <li class="active2">
+               <dl>
+                  <dt>用户名：</dt>
+                  <dd>
+                     <input type="text" id="username" class="text" placeholder="2-10位ID的用户名" >
+                  </dd> 
+               </dl>
+               <dl>
+                  <dt>密&nbsp;&nbsp;&nbsp;码：</dt>
+                  <dd>
+                     <input type="text" id="password" class="text" placeholder="6-20个大小写英文字母、符号或数字">
+                  </dd>
+               </dl>
+               <div class="box1">
+                  <dl>
+                     <dt>验证码：</dt>
+                     <dd>
+                        <input type="text" class="text" placeholder="输入验证码">
+                     </dd>
+                  </dl>
+                  <span>
+                     <img src="../html/images/yan.png" title="" name="codeimage" id="sms_codeimage">
+                  </span>
+               </div>
+               <div class="handle">
+                  <span>
+                     <input type="checkbox">七天自动登录
+                  </span>
+                  <a class="forget" href="index.php?act=login&amp;op=forget_password">忘记密码？</a>
+               </div>
+               <div class="submit">
+                  <input type="submit" id="btn" class="submit-s" value="登&nbsp;&nbsp;&nbsp;录">
+               </div>
+            </li>
+            <li></li>
+         </ol>
+      </div>
+      <div class="boxT">
+         <h4>您可以用合作伙伴账号登录：</h4>
+         <a href="https://www.nanshig.com/shop/api.php?act=toqq" title="QQ账号登录" class="qq"><i></i>QQ</a>
+         <a href="https://www.nanshig.com/shop/api.php?act=tosina" title="新浪微博账号登录" class="sina"><i></i>新浪微博</a>
+      </div>
+   </div>
+   <script src="../js/jquery.js"></script>
+   <script>
+      ; (function () {1
+         // 先获取元素
+         var username = document.getElementById("username");
+         var password = document.getElementById("password");
+         var btn = document.getElementById("btn");
+         // 加多两把锁
+         var user_lock = false;
+         var pass_lock = false;
+         // console.log(btn);
+         username.onblur = function () {
+            var userValue = username.value;
+            // 正则
+            var reg = /^[^\d][a-zA-Z\u4e00-\u9fa5]{1,10}$/;
+            if (!reg.test(userValue)) {
+               alert('用户名不符合规范，请重新输入');
+               user_lock = false;
+               return
+            }
+            user_lock = true;
+         }
+         // 密码验证
+         password.onblur = function(){
+            var passValue = password.value;
+            var reg = /^\w{6,20}$/;
+            if(!reg.test(passValue)){
+               alert("密码不符合规范，请重新输入");
+               pass_lock = false;
+               return
+            }
+            pass_lock = true;
+         };
+         btn.onclick = function(){
+            if(!(user_lock && pass_lock)){
+               alert('用户名或者密码输入不正确，请重新输入');
+               return
+            }else{
+               $.ajax({
+                  url:"../../../../php/login.php",
+                  data:{username:username.value,password:password.value},
+                  type:"get",
+                  dataType:"json",
+                  success(data){
+                     // console.log(data.error);
+                     if(!data.error){
+                        alert(data.msg);
+                        // console.log("跳转页面");
+                        location.href = "./index.html";
+                     }else{
+                        alert(data.msg);
+                     }
+                  }
+               })
+            }
+         }
+      })()
+   </script>
+</body>
+
+</html>

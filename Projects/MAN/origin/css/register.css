@@ -1,0 +1,331 @@
+@charset "utf-8";
+* {
+   margin: 0;
+   padding: 0;
+}
+ul,li{
+   list-style:none;
+}
+input,textarea,select,a:focus {
+   outline: none;
+}
+/* 头部------------- */
+.header {
+   width: 100%;
+   height: 82px;
+   border-bottom: solid 2px #F5F5F5;
+   box-shadow: 1px 1px 10px 1px rgba(15, 166, 255, .1);
+}
+
+.header .header-cen {
+   width: 1200px;
+   height: 80px;
+   margin: 0 auto;
+   box-sizing: border-box;
+   padding-top: 10px;
+}
+
+.header .header-cen a {
+   display: block;
+   width: 225px;
+   height: 60px;
+   float: left;
+}
+
+.header .header-cen .midle {
+   float: left;
+   margin-left: 15px;
+   margin-top: 18px;
+   width: 822px;
+   height: 30px;
+   border:1px solid #ffb4a8;
+   background-color: #fef2f2;
+   color: #6C6C6C;
+   font-size: 12px;
+   text-align: center;
+   line-height: 30px;
+}
+
+.header .header-cen .btn a {
+   width: 68px;
+   height: 31.2px;
+   background: #2f97f0;
+   color: #eee;
+   border-color: #eee;
+   text-align: center;
+   line-height: 31.2px;
+   border-radius: 4px;
+   float: right;
+   margin-top: 18px;
+   text-decoration: none;
+}
+
+.header .header-cen .btn a:hover {
+   text-decoration: block;
+}
+/* 主体内容----------- */
+.contain{
+   width:100%;
+   height:680px;
+   box-sizing:border-box;
+   padding-top:70px;
+}
+.contain .box{
+   width:869px;
+   height:560px;
+   margin:0 auto;
+   border:1px solid #ccc;
+   padding:20px;
+   box-sizing:border-box;
+}
+.contain .box .box-left{
+   width:600px;
+   height:520px;
+   border-right:1px solid #ccc;
+   float:left;
+}
+.contain .box .box-right{
+   width:220px;
+   height:520px;
+   float:right;
+}
+.box .box-left .boxT{
+   width:580px;
+   height:40.2px;
+   font-size:18px;
+   color:#2f97f0;
+   text-align:center;
+   border-bottom: 3px solid #2f97f0;
+}
+.box .box-left .boxC{
+   width:580px;
+   height:339.16px;
+   box-sizing:border-box;
+   padding:49px 90px 0;
+}
+.box .box-left .boxC .boxC-con{
+   width:400px;
+   height:290.16px;
+}
+
+
+.box .box-left .boxC .boxC-con dl{
+   width:400px;
+   height:54px;
+   border:1px solid #ccc;
+   box-sizing:border-box;
+}
+.box .box-left .boxC .boxC-con .boxC-mid dl{
+   border-top:1px solid rgb(204, 204, 204,0);
+}
+.box .box-left .boxC .boxC-con dl dt{
+   font-size: 14px;
+   line-height: 20px;
+   color: #000;
+   width: 72px;
+   padding: 16px 0 16px 20px;
+   float: left;
+}
+.box .box-left .boxC .boxC-con dl dd{
+   height: 28px;
+   float: left;
+   padding: 12px 0;
+}
+.box .box-left .boxC .boxC-con dl .text{
+   font-family: "microsoft yahei";
+   font-size: 14px;
+   line-height: 28px;
+   width: 290px;
+   height: 28px;
+   padding: 0;
+   border: none 0;
+}
+.box .box-left .boxC .boxC-con dl .text::-webkit-input-placeholder{
+   color: rgb(187, 187, 187);
+}
+
+.box .box-left .boxC .boxC-con .boxC-mid{
+   width:400px;
+   height:54px;
+}
+
+.box .box-left .boxC .boxC-con .boxC-mid dl{
+   width: 400px;
+   height:54px;
+   float: left;
+}
+.box .box-left .boxC .boxC-con .boxC-mid dl{
+   width: 400px;
+   height:54px;
+   float: left;
+}
+.box .box-left .boxC .boxC-con .boxC-mid dl dt{
+   font-size: 14px;
+   line-height: 20px;
+   color: #000;
+   width: 72px;
+   padding: 16px 0 16px 20px;
+   float: left;
+}
+.box .box-left .boxC .boxC-con .boxC-mid dl dd{
+   width:100px;
+   height: 52px;
+   float: left;
+   padding: 12px 0;
+}
+.box .box-left .boxC .boxC-con .boxC-mid dl dd .text1{
+   font-family: "microsoft yahei";
+    font-size: 14px;
+    line-height: 28px;
+    width: 300px;
+    height: 28px;
+    padding: 0;
+    border: none 0;
+}
+.box .box-left .boxC .boxC-con .boxC-mid dl dd .text1::-webkit-input-placeholder{
+   color: rgb(187, 187, 187);
+}
+.box .box-left .boxC .boxC-con .boxC-mid span{
+   width: 120px;
+    height: 52px;
+    float: left;
+    margin: -1px 0 0 -1px;
+    border: solid 1px #E6E6E6;
+    position: relative;
+    z-index: 1;
+}
+.box .box-left .boxC .boxC-con .boxC-mid span img{
+   width: 120px;
+   height: 52px;
+}
+/* .box .box-left .boxC .boxC-con .boxC-mid span a{
+   line-height: 22px;
+   color: #FFF;
+   background-color: #21b384;
+   vertical-align: middle;
+   display: inline-block;
+   height: 22px;
+   padding: 0 8px;
+   margin: 0 4px;
+   border-radius: 2px;
+} */
+.box .box-left .boxC .boxC-con .boxC-text{
+   width:400px;
+   height:42.16px;
+   line-height: 20px;
+   color: #999;
+   margin: 15px 0;
+   font-size:12px;
+}
+.box .box-left .boxC .boxC-con .boxC-text span a{
+   line-height: 22px;
+   color: #FFF;
+   background-color: #21b384;
+   vertical-align: middle;
+   display: inline-block;
+   height: 22px;
+   padding: 0 8px;
+   margin: 0 4px;
+   border-radius: 2px;
+   text-decoration: none;
+}
+.box .box-left .boxC .boxC-con .boxC-text span .iconfont{
+   font-size:10px;
+   margin-right:3px;
+}
+.box .box-left .boxC .boxC-con .submit{
+   margin-top: 15px;
+}
+.box .box-left .boxC .boxC-con .submit .submitBtn{
+   font-family: "microsoft yahei";
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFF;
+    background-color: #2f97f0;
+    width: 398px;
+    height: 42px;
+    border: solid 1px #2f97f0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+/* 右边-------------- */
+.box .box-right .login{
+   width:200px;
+   height:103.4px;
+   font-size: 0;
+   /* *word-spacing: -1px; */
+   padding-bottom: 20px;
+   margin-bottom: 20px;
+   border-bottom: dashed 1px #E6E6E6;
+   padding:20px 10px 0;
+   /* box-sizing:border-box; */
+}
+.box .box-right .login h4{
+   font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+    margin-bottom: 20px;
+    color: #555;
+}
+.box .box-right .login a{
+   vertical-align: top;
+   display: inline-block;
+   width: 42px;
+   margin-left: 12px;
+}
+.box .box-right .login a i{
+   background: url(../html/images/login_pic.png) no-repeat;
+   display: block;
+   width: 42px;
+   height: 42px;
+}
+.box .box-right .login .qq i{
+   background-position: -126px -32px;
+}
+.box .box-right .login .sina i{
+   background-position: -168px -32px;
+}
+.box .box-right .resiter{
+   font-size:12px;
+   color:#ccc;
+}
+.box .box-right .resiter h4{
+   font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    margin-left:10px;
+}
+.box .box-right .resiter li{
+   color: #999;
+   line-height: 24px;
+   margin-bottom: 10px;
+   padding-left: 24px;
+}
+.box .box-right .resiter i{
+   background: url(../html/images/login_pic.png) no-repeat;
+   vertical-align: middle;
+   display: inline-block;
+   width: 24px;
+   height: 24px;
+   margin-right: 8px;
+}
+.box .box-right .resiter .ico1 i{
+   background-position: 0 -76px;
+}
+.box .box-right .resiter .ico2 i{
+   background-position: -30px -76px;
+}
+.box .box-right .resiter .ico3 i{
+   background-position: -60px -76px;
+}
+.box .box-right .resiter .ico4 i{
+   background-position: -90px -76px;
+}
+.box .box-right .resiter .ico5 i{
+   background-position: -120px -76px;
+}
+.box .box-right .resiter .ico6 i{
+   background-position: -150px -76px;
+}

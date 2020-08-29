@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="../css/register.css">
+   <link rel="stylesheet" href="../font_qnqkkesyz6/iconfont.css">
+</head>
+
+<body>
+   <!-- 头部 -->
+   <div class="header">
+      <div class="header-cen">
+         <h1><a href="../html/index.html"><img src="../html/images/logo.png" alt=""></a></h1>
+         <div class="midle">为确保您账户的安全及正常使用，依《网络安全法》相关要求，6月1日起会员账户需绑定手机。
+            如您还未绑定，请尽快完成，感谢您的理解及支持！
+         </div>
+         <div class="btn"><a href="../html/login.html">登录</a></div>
+      </div>
+   </div>
+   <!-- 主体内容 -->
+   <div class="contain">
+      <div class="box">
+         <div class="box-left">
+            <div class="boxT">账号密码注册</div>
+            <div class="boxC">
+               <div class="boxC-con">
+                  <dl>
+                     <dt>用户名：</dt>
+                     <dd>
+                        <input type="text" id="username" class="text" placeholder="请输入2-10位ID的用户名">
+                     </dd>
+                  </dl>
+                  <div class="boxC-mid">
+                     <dl>
+                        <dt>密码：</dt>
+                        <dd>
+                           <input type="text" id="password" class="text1" placeholder="请输入6-20个大小写英文字母、符号或数字">
+                        </dd>
+                     </dl>
+                     <!-- <span>
+                        <img src="../html/images/yan.png" 
+                        title="" name="codeimage" id="sms_codeimage">
+                        <a class="makecode" href="javascript:void(0);" 
+                        onclick="javascript:document.getElementById('sms_codeimage').src='index.php?act=seccode&amp;op=makecode&amp;type=50,120&amp;nchash=d8fa502d&amp;t=' + Math.random();">
+                        看不清，换一张</a>
+                     </span> -->
+                  </div>
+                  <div class="boxC-text">
+                     <span>您也可以选择短信注册，点击</span>
+                     <span class="texts"><a href=""><i class="iconfont icon-shouji"></i>发送短信验证</a></span>
+                     <span>，并将您手机短信所接收到的“6位验证码”输入到下方短信验证，再提交下一步。</span>
+                  </div>
+                  <dl>
+                     <dt>短信验证：</dt>
+                     <dd>
+                        <input type="text" class="text" placeholder="输入6位短信验证码">
+                     </dd>
+                  </dl>
+                  <div class="submit">
+                     <input type="button" id="submitBtn" class="submitBtn" value="下一步">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="box-right">
+            <div class="login">
+               <h4>使用第三方快捷账号登录</h4>
+               <a href="https://www.nanshig.com/shop/api.php?act=toqq" title="QQ账号登录" class="qq"><i></i></a>
+               <a href="https://www.nanshig.com/shop/api.php?act=tosina" title="新浪微博" class="sina"><i></i></a>
+            </div>
+            <div class="resiter">
+               <h4>注册之后您可以</h4>
+               <ol>
+                  <li class="ico1">
+                     <i></i>
+                     购买商品支付订单
+                  </li>
+                  <li class="ico2">
+                     <i></i>
+                     收藏商品关注店铺</li>
+                  <li class="ico3">
+                     <i></i>
+                     安全交易诚信无忧</li>
+                  <li class="ico4">
+                     <i></i>
+                     积分获取优惠购物</li>
+                  <li class="ico5">
+                     <i></i>
+                     会员等级享受特权</li>
+                  <li class="ico6">
+                     <i></i>
+                     评价晒单站外分享</li>
+               </ol>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="../js/jquery.js"></script>
+   <script>
+      // // 先获取已有元素
+      // var $username = $("#username");
+      // var $password = $("#password");
+      // var $userValue = $username.val();
+      // $username.val("请输入2-10位ID的用户名").css("color","rgb(187, 187, 187)");
+      // // console.log($username,$password);
+      // $username.on('focus',function(){
+      //    if($(this).val() === '请输入2-10位ID的用户名'){
+      //       $(this).val("")
+      //    }else if($(this).val() !== ('请输入2-10位ID的用户名') && $(this).val() !== ('')){
+      //       $(this).css("color","red")
+      //    }
+      // })
+      // $username.on('blur',function(){
+      //    if($(this).val() === ""){
+      //       $(this).val("请输入2-10位ID的用户名")
+      //    }else{
+      //       $(this).val().css("color","rgb(0,0,0)")
+      //    }
+      // })
+      ;(function(){
+         // 先获取已有元素
+      var username = document.getElementById("username");
+      var password = document.getElementById("password");
+      var submitBtn = document.getElementById("submitBtn");
+      // 制作两把锁
+      var user_lock = false;
+      var pass_lock = false;
+      // console.log(username,password);
+      // 名字输入框绑定失去焦点函数
+      username.onblur = function () {
+         var userValue = username.value;
+         // 正则验证规范
+         var reg = /^[^\d][a-zA-Z\u4e00-\u9fa5]{1,10}$/;
+         if (!reg.test(userValue)) {
+            alert("命名不符合规范，请重新输入");
+            user_lock = false;
+            return
+         }
+         // 发送ajax
+         $.ajax({
+            url: "../../../../php/usercheck.php",
+            data: { username: userValue },
+            type: "get",
+            dataType: "json",
+            success(data) {
+               if (!data.erroe) {
+                  console.log(data.msg);
+                  user_lock = true;
+               } else {
+                  throw new Erroe(data.msg);
+               }
+            },
+         })
+      }
+      //  密码输入框绑定失去焦点函数
+       password.onblur = function(){
+          var passValue = password.value;
+         //  console.log(passValue);
+         //  正则
+         var reg = /^\w{6,20}$/;
+         if(!reg.test(passValue)){
+            alert("密码不符合规范，请重新输入");
+            pass_lock = false;
+            return
+         }
+         pass_lock = true;
+       }
+       submitBtn.onclick = function(){
+         //  console.log(1);
+         if(user_lock === true && pass_lock === true){
+            console.log(1);
+            $.ajax({
+               url:"../../../../php/register.php",
+               data:{username:username.value,password:password.value},
+               type:"post",
+               dataType:"json",
+               success(data){
+                  console.log(data);
+                  if(!data.error){
+                     alert(data.msg);
+                     location.href = "./login.html";
+                  }else{
+                     console.log(data.msg);
+                  }
+               }
+            })
+         }else{
+            alert("用户名或者密码输入不正确，请重新输入")
+         }
+       }
+      })();
+   </script>
+</body>
+
+</html>

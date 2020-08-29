@@ -1,0 +1,279 @@
+@charset "utf-8";
+* {
+   margin: 0;
+   padding: 0;
+}
+ul,li{
+   list-style:none;
+}
+input,textarea,select,a:focus {
+   outline: none;
+}
+/* 头部------------- */
+.header {
+   width: 100%;
+   height: 82px;
+   border-bottom: solid 2px #F5F5F5;
+   box-shadow: 1px 1px 10px 1px rgba(15, 166, 255, .1);
+}
+
+.header .header-cen {
+   width: 1200px;
+   height: 80px;
+   margin: 0 auto;
+   box-sizing: border-box;
+   padding-top: 10px;
+}
+
+.header .header-cen a {
+   display: block;
+   width: 225px;
+   height: 60px;
+   float: left;
+}
+
+.header .header-cen .midle {
+   float: left;
+   margin-left: 15px;
+   margin-top: 18px;
+   width: 822px;
+   height: 30px;
+   border:1px solid #ffb4a8;
+   background-color: #fef2f2;
+   color: #6C6C6C;
+   font-size: 12px;
+   text-align: center;
+   line-height: 30px;
+}
+
+.header .header-cen .btn a {
+   width: 68px;
+   height: 31.2px;
+   background: #2f97f0;
+   color: #eee;
+   border-color: #eee;
+   text-align: center;
+   line-height: 31.2px;
+   border-radius: 4px;
+   float: right;
+   margin-top: 18px;
+   text-decoration: none;
+}
+
+.header .header-cen .btn a:hover {
+   text-decoration: block;
+}
+/* 主体内容------------ */
+.contain{
+   background-color: #FFF;
+   width: 480px;
+   height:469.2px;
+   margin:20px auto;
+   border: solid 1px #E6E6E6;
+   padding: 19px 19px 29px 19px;
+   box-sizing:border-box;
+}
+.contain .box{
+   width:440px;
+   height:357.2px;
+}
+.contain .box ul{
+   width:440px;
+   height:40.2px;
+   border-bottom: solid 1px #E6E6E6;
+}
+.contain .box ul li{
+   width:220px;
+   height:40px;
+   text-align:center;
+   line-height:40px;
+   float:left;
+   color: #999;
+   font-size:18px;
+}
+.contain .box ul .active{
+   color: #2f97f0;
+   border-bottom: 3px solid #2f97f0;
+}
+.contain .box ol{
+   width:440px;
+   height:287px;
+   position:relative;
+}
+.contain .box ol li{
+   width:352px;
+   height:267px;
+   position:absolute;
+   left:44px;
+   top:28px;
+   display:none;
+}
+.contain .box ol .active2{
+   display:flex;
+   flex-direction:column;
+}
+
+.contain .box ol .active2 dl{
+   background-color: #FFF;
+   width: 348px;
+   height: 52px;
+   margin-top: -1px;
+   border: solid 1px #E6E6E6;
+   position: relative;
+   z-index: 1;
+}
+.contain .box ol .active2 dl dt{
+   font-size: 14px;
+   line-height: 20px;
+   color: #666;
+   width: 72px;
+   padding: 16px 0 16px 20px;
+   float: left;
+}
+.contain .box ol .active2 dl dd{
+   width:256px;
+   height: 28px;
+   float: left;
+   padding: 12px 0;
+}
+.contain .box ol .active2 dl .text{
+   font-family: "microsoft yahei";
+   font-size: 14px;
+   line-height: 28px;
+   width: 250px;
+   height: 28px;
+   padding: 0;
+   border: none 0;
+}
+.contain .box ol .active2 dl .text::-webkit-input-placeholder{
+   color: rgb(187, 187, 187);
+}
+.contain .box ol .active2 .box1{
+   margin-top:15px;
+}
+.contain .box ol .active2 .box1 dl{
+   background-color: #FFF;
+   width: 228px;
+   height: 52px;
+   margin-top: -1px;
+   border: solid 1px #E6E6E6;
+   position: relative;
+   z-index: 1;
+   float:left;
+}
+.contain .box ol .active2 .box1 dl dt{
+   font-size: 14px;
+    line-height: 20px;
+    color: #666;
+    width: 72px;
+    padding: 16px 0 16px 20px;
+    float: left;
+}
+.contain .box ol .active2 .box1 dl dd{
+   width:120px;
+   height: 28px;
+   float: left;
+   padding: 12px 0;
+}
+.contain .box ol .active2 .box1 dl .text{
+   font-family: "microsoft yahei";
+   font-size: 14px;
+   line-height: 28px;
+   width: 120px;
+   height: 28px;
+   float:left;
+   padding: 0;
+   border: none 0;
+}
+.contain .box ol .active2 .box1 span{
+   float:right;
+}
+.active2 .handle{
+   width:352px;
+   height:20px;
+   line-height: 20px;
+   margin-top: 15px;
+   overflow: hidden;
+   line-height:20px;
+}
+.active2 .handle span{
+   font-size:12px;
+   color:#777;
+   float:left;
+}
+.active2 .handle span input{
+   vertical-align: middle;
+    display: inline-block;
+    margin-right: 4px;
+}
+.active2 .handle .forget{
+   color:#333;
+   float:right;
+   font-size:12px;
+   text-decoration: none;
+}
+.active2 .submit{
+   margin-top: 15px;
+}
+.active2 .submit .submit-s{
+   font-family: "microsoft yahei";
+   font-size: 16px;
+   font-weight: 600;
+   color: #FFF;
+   background-color: #2f97f0;
+   width: 348px;
+   height: 42px;
+   border: solid 1px #2f97f0;
+   border-radius: 3px;
+   cursor: pointer;
+}
+.boxT{
+   width:342px;
+   height:62px;
+   margin:0 auto;
+}
+.boxT h4{
+   font-size: 12px;
+    line-height: 20px;
+    color: #333;
+    font-weight: 600;
+    height: 20px;
+    margin-bottom: 10px;
+}
+.boxT .qq{
+   font-size: 12px;
+    text-decoration: none;
+    color: #AAA;
+    vertical-align: top;
+    display: inline-block;
+    height: 32px;
+    margin-right: 24px;
+}
+.boxT .qq i{
+   background: url(../html/images/login_pic.png) no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 6px;
+}
+.boxT .sina{
+   font-size: 12px;
+    text-decoration: none;
+    color: #AAA;
+    vertical-align: top;
+    display: inline-block;
+    height: 32px;
+    margin-right: 24px;
+}
+.boxT .sina i{
+   background: url(../html/images/login_pic.png) no-repeat;
+    vertical-align: middle;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 6px;
+}
+.boxT .sina i{
+   background-position: -32px 0;
+}

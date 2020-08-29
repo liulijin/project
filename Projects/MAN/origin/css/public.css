@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* 公共样式 */
+* {
+   margin: 0;
+   padding: 0;
+}
+
+ul,li{
+   list-style: none;
+}
+
+/* input {
+   letter-spacing: normal;
+   word-spacing: normal;
+   text-transform: none;
+   text-indent: 0px;
+   text-shadow: none;
+} */
